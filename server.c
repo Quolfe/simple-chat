@@ -36,6 +36,8 @@ int main() {
 
     printf("Client connected!\n");
 
+    close(server_fd);
+
     char buf[1024];
     memset(buf, 0, sizeof(buf));
     int res;
@@ -44,7 +46,7 @@ int main() {
         memset(buf, 0, sizeof(buf));
     }
 
-    close(server_fd);
+    close(peer_fd);
 
     return 0;
 }
